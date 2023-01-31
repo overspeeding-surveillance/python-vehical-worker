@@ -13,6 +13,9 @@ tracker = EuclideanDistanceTracker()
 
 
 def main():
+    if not os.path.exists("../vehicles"):
+        os.makedirs("../vehicles")
+
     connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
     channel = connection.channel()
 
