@@ -31,10 +31,6 @@ def main():
         while ret:
             results = model(frame)
 
-            if not ret:
-                ret, frame = cap.read()
-                continue
-
             response = tracker.update(results)
 
             for vehicle_id, info in response.items():  # info: {'box': [[], ...], 'class': 1}
